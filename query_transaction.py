@@ -34,7 +34,7 @@ curr_transport = '127.0.0.1:9090'
 txid = "2599dbe540a583ede3512fef9a0f26be718c039ffd4d04d85ff3b339f40e73b1"
 query_transaction(curr_transport, txid)
 print("NEW TXID:")
-# url = "http://api.blockcypher.com/v1/btc/test3/txs/" + "2599dbe540a583ede3512fef9a0f26be718c039ffd4d04d85ff3b339f40e73b1"
-# response = urllib.urlopen(url)
-# data = json.load(response)
-# detect_transactions(data['outputs'])
+url = "http://api.blockcypher.com/v1/btc/test3/txs/" + "2599dbe540a583ede3512fef9a0f26be718c039ffd4d04d85ff3b339f40e73b1"
+response = urllib.urlopen(url)
+data = json.load(response)
+detect_transactions(data['outputs'])
