@@ -1,6 +1,6 @@
 # Attacking With Bitcoin
 ## PREFACE
-This repository is PoC toolkit for creating and interacting with Bitcoin based floating command and control infrastructure.This infrastucture is designed to create robust censorship resistant malware. Work contained here has been completed in line with Deakin's Summer Casual Research roles and is currently awaiting peer review.
+This repository is PoC toolkit for creating and interacting with Bitcoin based floating command and control infrastructure.This infrastucture is designed to create robust censorship resistant botnet. A paper presenting this project is accepted for publication at the 13th International Conference on Computational Intelligence in Security for Information Systems (Core: B-ranked) and available to read from [the following link](https://arxiv.org/abs/2004.01855). This project was funded by The School of Information Technology at Deakin University with PI as Dr. Arash Shaghaghi and Casual Research Assistant working on the project Dimitri Kamenski.
 
 
 # Contents
@@ -13,7 +13,20 @@ This file contains the logic required in order to complete the query transaction
 ## 3. transaction-result.txt:
 This file contains the JSON output from the `createrawtransaction` method explained in more detail later in this document.
 
+# High Level Architecture
+Diagram below describes the high level architecture of the Botnet. As can be seen from the diagram there are dependencies on a a vulnerable victim machine, more than one command and control server and access to read and write to a bitcoin full node.
 
+![Architecture Diagram][architecture-diagram]
+
+# Meterpreter: Stageless Payloads
+The diagram below shows the execution of a python import in order to trigger calc.exe to launch on a windows 10 victim machine. The interesting points to mention is that python is not required by the victim, instead the meterpreter stageless payload will execute the native binding equivalent functions.
+
+![Stageless payload executes calc.exe on windows][calc-exe]
+
+# Meterpreter: Python-based control over meterpreter transport
+The figure below shows how to control the meterpreter transport functionality from the victim computer. This effectively disconnects the victim from the attacker and reconnects to the new transport class. It is this transport class details we attempt to pull from our MalwareManager.py function.
+
+![Meterpreter closing from the victim machine][python-import]
 
 # Creating Raw Transactions
 The below instructions detail how to write OP_Return data to the Bitcoin Blockchain.
@@ -57,4 +70,6 @@ The below instructions detail how to write OP_Return data to the Bitcoin Blockch
 
 
 
-
+[architecture-diagram]: https://github.com/dummytree/blockchain-botnet-poc/raw/master/figures/botnet-environment.png "Architecture Diagram"
+[calc-exe]: https://github.com/dummytree/blockchain-botnet-poc/raw/master/figures/calcexe.png 
+[python-import]: https://github.com/dummytree/blockchain-botnet-poc/raw/master/figures/import-python.png 
