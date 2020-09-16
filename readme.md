@@ -1,8 +1,10 @@
 # Attacking With Bitcoin
 ## PREFACE
-This repository is PoC toolkit for creating and interacting with Bitcoin based floating command and control infrastructure.This infrastucture is designed to create robust censorship resistant botnet. A paper presenting this project is accepted for publication at the 13th International Conference on Computational Intelligence in Security for Information Systems (Core: B-ranked) and available to read from [the following link](https://arxiv.org/abs/2004.01855). This project was funded by The School of Information Technology at Deakin University with PI as Dr. Arash Shaghaghi and Casual Research Assistant working on the project Dimitri Kamenski.
-
-
+This repository is PoC toolkit for creating and interacting with Bitcoin based floating command and control infrastructure.This infrastucture is designed to create robust censorship resistant botnet. A paper presenting this project is accepted for publication at the 13th International Conference on Computational Intelligence in Security for Information Systems (Core: B-ranked) and available to read from [the following link](https://arxiv.org/abs/2004.01855).\
+\
+To view the presentation for this research, please see [the following link](https://www.youtube.com/watch?list=PLzdg8yJ92RVICRDmGxKY2SoPPD-uqQbIB&v=lQo9HEkfLK0&feature=emb_logo)\
+\
+This project was funded by The School of Information Technology at Deakin University with PI as Dr. Arash Shaghaghi and Casual Research Assistant working on the project Dimitri Kamenski.
 # Contents
 ## 1. MalwareManager.py:
 This file contains the logic in order to find OP_Return data within a particular queried block hash or transaction hash. This can be used to create a further 'work' like behaviour, in order to extract the next block or transaction hash.
